@@ -1,9 +1,12 @@
 import './App.css';
+import Header from './components/Header';
+import Tasks from './components/Tasks';
 
 function App() {
   return (
     <div className="App">
-      <h>Todo App</h>
+      <Header title="Todo App" />
+      <Tasks />
     </div>
   );
 }
