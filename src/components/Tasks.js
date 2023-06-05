@@ -20,10 +20,21 @@ const Tasks = () => {
   const deleteTodo = (id) => {
     setTask([...tasks.filter((task) => task.id !== id)]);
   };
+
+  const Tog = (id) => {
+    setTask((pre) => pre.map((task) => {
+      if (task.id === id) {
+        return {
+          ...task, completed: !task.completed,
+        };
+      }
+      return task;
+    }));
+  };
   return (
     <div>
       {
-        tasks.map((task) => <Task key={task.id} task={task} deleteTodo={deleteTodo} />)
+        tasks.map((task) => <Task key={task.id} Tog={Tog} task={task} deleteTodo={deleteTodo} />)
      }
     </div>
   );
