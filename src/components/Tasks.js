@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Task from './Task';
+import AddTask from './AddTask';
 
 const Tasks = () => {
   const [tasks, setTask] = useState([{
@@ -31,8 +32,18 @@ const Tasks = () => {
       return task;
     }));
   };
+
+  const AddNewTask = (task) => {
+    const newTodo = {
+      id: 4,
+      title: task,
+      completed: false,
+    };
+    setTask([...tasks, newTodo]);
+  };
   return (
     <div>
+      <AddTask AddNewTask={AddNewTask} />
       {
         tasks.map((task) => <Task key={task.id} Tog={Tog} task={task} deleteTodo={deleteTodo} />)
      }
