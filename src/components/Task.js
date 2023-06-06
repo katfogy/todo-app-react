@@ -3,13 +3,13 @@ import React from 'react';
 const Task = (prop) => {
   const { task, deleteTodo, Tog } = prop;
   return (
-    <div>
+    <div className="task">
+      <input type="checkbox" checked={task.completed} onChange={() => Tog(task.id)} />
       <h3 className={task.completed ? 'linethtough' : ''}>
-        <input type="checkbox" checked={task.completed} onChange={() => Tog(task.id)} />
         {task.title}
         {' '}
-        <button onClick={() => deleteTodo(task.id)} type="button">Delete</button>
       </h3>
+      <button onClick={() => deleteTodo(task.id)} type="button" className="btn">Delete</button>
     </div>
   );
 };

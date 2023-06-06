@@ -18,10 +18,10 @@ const AddTask = (prop) => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Please Add Todo" value={tasknew} onChange={onChange} />
-      <button type="submit">Add Todo</button>
-      <span>{message}</span>
+    <form onSubmit={handleSubmit} className="form">
+      <input type="text" placeholder="Please Add Todo" value={tasknew} onChange={onChange} className="input-control" />
+      <button type="submit" className="btn">Add Todo</button>
+      <span className="msg">{message}</span>
     </form>
   );
 };
