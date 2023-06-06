@@ -4,7 +4,7 @@ const Task = (prop) => {
   const { task, deleteTodo, Tog } = prop;
   return (
     <div>
-      <h3>
+      <h3 className={task.completed ? 'linethtough' : ''}>
         <input type="checkbox" checked={task.completed} onChange={() => Tog(task.id)} />
         {task.title}
         {' '}
